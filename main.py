@@ -1,9 +1,9 @@
 from flask import Flask,render_template,redirect,abort
-import uuid,base64
+import base64,uuid
 
 app = Flask(__name__)
 randomLoginPath = ''
-def generateRandomLoginPath():
+def generateRandomLoginUrl():
     global randomLoginPath
     randomLoginPath=base64.b64encode(str(uuid.uuid1()).encode(encoding="utf-8")).decode()
     print('生成'+randomLoginPath)
@@ -14,13 +14,13 @@ def index():
 
 @app.route('/login/')
 def redLogin():
-    generateRandomLoginPath()
+    generateRandomLoginUrl()
     return redirect('/login/'+randomLoginPath)
 
 @app.route('/login/<path>')
 def login(path=None):
     if path==randomLoginPath:
-        generateRandomLoginPath()
+        generateRandomLoginUrl()
         return render_template('login.html')
     else:
         abort(410)

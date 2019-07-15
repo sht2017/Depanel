@@ -1,0 +1,58 @@
+规范
+    a)命名规范
+    变量名 类名 组件名均采用（小）驼峰命名法/指意正确的英文单词
+    以下是示例
+        thisIsAnExample <=正确
+        ThisIsAnExample <=错误
+        thisisanexample <=错误
+        THISISANEXAMPLE <=错误
+        This_is_an_example <=错误
+        zheShiGeLiZi <=错误
+        zheshigelizi <=错误
+    b)注释规范
+    如果包含注释请在更新代码时一并更新
+    以下是示例(样本与样本间隔行)
+        样本一: <=正确
+        helloworld.html 20xx/1/1
+            <div>helloworld</div>
+            <!--上面这里的文字为helloworld-->
+        helloworld.html 20xx/1/2
+            <div>helloworldagain</div>
+            <!--上面这里的文字为helloworldagain-->
+
+        样本二: <=错误
+        helloworld.html 20xx/1/1
+            <div>helloworld</div>
+            <!--上面这里的文字为helloworld-->
+        helloworld.html 20xx/1/2
+            <div>helloworldagain</div>
+            <!--上面这里的文字为helloworld-->
+    c)算法规范
+    不要求复杂/新奇 稳定优先 也要保证效率
+    下面是示例(样本与样本间隔行)
+        样本一：<=正确
+            def insert_sort(array):
+                for i in range(len(array)):
+                    for j in range(i):
+                        if array[i] < array[j]:
+                            array.insert(j, array.pop(i))
+                            break
+                return array
+        
+        样本二: <=正确
+            def bubble_sort(array):
+                for i in range(len(array)):
+                    for j in range(i, len(array)):
+                        if array[i] > array[j]:
+                            array[i], array[j] = array[j], array[i]
+                return array
+
+        样本三: <=错误
+            def select_sort(array):
+                for i in range(len(array)):
+                    x = i  # min index
+                    for j in range(i, len(array)):
+                        if array[j] < array[x]:
+                            x = j
+                    array[i], array[x] = array[x], array[i]
+                return array
