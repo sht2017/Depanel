@@ -15,4 +15,12 @@ def renderHelp(file):
             content3=line[4]
         except:
             content3=''
-    return title,author,content1,content2,content3
+        try:
+            content4=line[5]
+        except:
+            content4=''
+        try:
+            content5=line[6]
+        except:
+            content5=''
+    return title,author,content1,content2,content3,content4,content5
