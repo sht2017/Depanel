@@ -7,7 +7,7 @@ from helpRenderer import renderHelp
 app = Flask(__name__)
 app.config['SECRET_KEY'] = generateRandomLoginUrl()
 
-if installed():
+if not installed():
     @app.route('/')
     def index():
         return redirect('/login/')
@@ -27,7 +27,7 @@ if installed():
                     print('valid')
                 else:
                     error = 'Invalid username/password'
-        return render_template('login.html', error=error, title=title)
+        return render_template('login1.html', error=error, title=title)
 
     @app.route('/help/retrievePassword/')
     def retrievePassword():
