@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/static/mdl/material.blue-pink.min.css">
+<script src="/static/mdl/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<body>
+    <a type="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect show-modal" style="color: #999999">
+        拒绝
+    </a>
+    <dialog class="mdl-dialog">
+        <div class="mdl-dialog__content">
+            <p>
+                如果您不同意我们的用户协议，将无法继续进行安装
+            </p>
+        </div>
+        <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+            <button type="button" class="mdl-button close">了解了</button>
+            <button type="button" class="mdl-button">Dialog</button>
+        </div>
+    </dialog>
+    <script>
+        var dialog = document.querySelector('dialog');
+        var showModalButton = document.querySelector('.show-modal');
+        if (!dialog.showModal) {
+            dialogPolyfill.registerDialog(dialog);
+        }
+        showModalButton.addEventListener('click', function () {
+            dialog.showModal();
+        });
+        dialog.querySelector('.close').addEventListener('click', function () {
+            dialog.close();
+        });
+    </script>
+</body>
+</html>

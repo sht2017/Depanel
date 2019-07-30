@@ -9,54 +9,79 @@
     <meta charset="utf-8">
     <title>Login</title>
 </head>
+<div>
 
-<body
-    style="background: url('/static/img/login/img.jpg') center no-repeat; background-size: cover; background-attachment: fixed;">
-    <div class="mdl-card"
-        style="background: url('/static/img/login/img.jpg') center no-repeat; background-size: cover; background-attachment: fixed; height: 250pt; border-radius: 10px; margin: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0; filter: blur(10px); overflow: hidden;">
-    </div>
-    <form method="POST">
-        <div class="mdl-card mdl-shadow--6dp"
-            style="text-align: center; background-color: #fff1; height: 250pt; border-radius: 10px; margin: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
-            <div class="mdl-card__title" style="background: #2196f3">
-                <h2 class="mdl-card__title-text" style="color: white">{{title}}</h2>
-            </div>
-            <div style="padding-left: 5pt; padding-right: 5pt">
-                <br>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="text-align: center;">
-                    <input class="mdl-textfield__input" type="text" id="sample3" name="username">
-                    <label class="mdl-textfield__label" for="sample3">Username</label>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="password" id="sample3" name="passphrase">
-                    <label class="mdl-textfield__label" for="sample3">Password</label>
-                </div>
-                <br>
-                <div style="width: 100%; text-align: left; padding-left: 5pt; padding-right: 5pt">
-                    <p style="font-size: small;color: crimson">{{error}}</p>
-                </div>
-                <br>
-                <div style="height: 100%; width: 100%;">
-                    <button id="login"
-                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
-                        style="text-align: center; border-radius: 20px; width: 75pt; position:absolute; bottom: 10pt; right: 10pt;">
-                        LOGIN
-                    </button>
-                    <a href="/help/retrievePassword/">
-                        <button id="retrievePassword" type="button"
-                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
-                            style="text-align: center; border-radius: 20px; width: 75pt; position:absolute; bottom: 10pt; right: 95pt;">
-                            找回密码
-                    </button></a>
-                </div>
-            </div>
+    <body
+        style="background: url('/static/img/login/img.jpg') center no-repeat; background-size: cover; background-attachment: fixed;">
+        <div class="mdl-card"
+            style="background: url('/static/img/login/img.jpg') center no-repeat; background-size: cover; background-attachment: fixed; height: 250pt; border-radius: 10px; margin: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0; filter: blur(10px); overflow: hidden;">
         </div>
-    </form>
-</body>
-<div class="mdl-tooltip" data-mdl-for="login">
+        <form method="POST">
+            <div class="mdl-card mdl-shadow--6dp"
+                style="text-align: center; background-color: #fff1; height: 250pt; border-radius: 10px; margin: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+                <div class="mdl-card__title" style="background: #2196f3">
+                    <h2 class="mdl-card__title-text" style="color: white">{{title}}</h2>
+                </div>
+                <div style="padding-left: 5pt; padding-right: 5pt">
+                    <br>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                        style="text-align: center;">
+                        <input class="mdl-textfield__input" type="text" id="sample3" name="username">
+                        <label class="mdl-textfield__label" for="sample3">Username</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="password" id="sample3" name="passphrase">
+                        <label class="mdl-textfield__label" for="sample3">Password</label>
+                    </div>
+                    <br>
+                    <div style="width: 100%; text-align: left; padding-left: 5pt; padding-right: 5pt">
+                        <p style="font-size: small;color: crimson">{{error}}</p>
+                    </div>
+                    <br>
+                    <div style="height: 100%; width: 100%;">
+                        <button id="login"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+                            style="text-align: center; border-radius: 20px; width: 75pt; position:absolute; bottom: 10pt; right: 10pt;">
+                            LOGIN
+                        </button>
+                        <a href="/help/retrievePassword/">
+                            <button id="retrievePassword" type="button"
+                                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+                                style="text-align: center; border-radius: 20px; width: 75pt; position:absolute; bottom: 10pt; right: 95pt;">
+                                找回密码
+                            </button></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+    <div class="mdl-tooltip" data-mdl-for="login">
         登入管理面板
-</div>
-<div class="mdl-tooltip" data-mdl-for="retrievePassword">
+    </div>
+    <div class="mdl-tooltip" data-mdl-for="retrievePassword">
         前往 帮助&gt;如何寻回我的密码
+    </div>
+    <style>
+        html{
+            overflow:hidden;
+        }
+        .footer {
+            padding-left: 40px;
+            font-size: 13px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+    <footer class="footer mdl-mini-footer">
+        <div class="mdl-mini-footer--left-section">
+            <ul class="mdl-mini-footer--link-list">
+                <li><a href="/help/">帮助</a></li>
+                <li><a href="/help/privacyAndTerms/">隐私条款</a></li>
+                <li><a href="/help/userAgreement/">用户协议</a></li>
+            </ul>
+        </div>
+    </footer>
 </div>
+
 </html>

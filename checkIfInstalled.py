@@ -1,5 +1,5 @@
 import os
-def ifinstall():
+def installed():
     if os.path.isfile('./.key'):
         return bool(True)
     else:
