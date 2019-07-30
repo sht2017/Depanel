@@ -12,7 +12,7 @@
 
 <body
     style="height: 100%; background: url('https://source.unsplash.com/1920x1080/?wallpaper') center no-repeat; background-size: cover; background-attachment: fixed;">
-    <form method="POST">
+    <div style="width: 100vw; height: 100vh; display : flex; overflow-x: hidden; overflow-y: auto; justify-content: center; align-items: center;">
         <style>
             .demo-card-wide.mdl-card {
                 width: 512px;
@@ -30,54 +30,65 @@
         </style>
 
         <div class="demo-card-wide mdl-card mdl-shadow--6dp"
-            style="width: 70vw; height: min-content; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0;">
+            style="width: 70vw; height: min-content; position: absolute; margin: auto;">
             <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">Step1 用户协议</h2>
             </div>
             <div class="mdl-card__supporting-text">
-                欢迎来到Depanel的世界，我是该项目作者John Stonty，接下来将会陪伴您度过一段兴致盎然的轻松时光。这个过程并不会很繁琐，相反地，仅需仔细阅读提示文字，您就能轻松地结束这个过程。
+                <h6>名词解释</h6>
+                <p>以下所出现的所有“用户”解释为使用Depanel的任何实体、个人和组织</p>
+                <p>用户协议：用户在基于明显的用途以及说明后主动安装、使用、管理软件，以及同意Depanel为您提供相关服务所订立的协议</p>
+                <h6>一 使用须知</h6>
+                <p>1.1 以自用为目的，在不违反2.1的原则下，可将Depanel用于商业或个人项目上，且不受任何限制。</p>
+                <p>1.2 以自用为目的，在不违反2.1的原则下，可任意修改程序源码，无需公开修改后源码，但使用时必须注明该项目由Depanel修改而来并将<a href="https://github.com/sht2017/Depanel" target="_blank">Github链接</a>(https://github.com/sht2017/Depanel)标识在可见位置。</p>
+                <h6>二 数据保护</h6>
+                <p>2.1 遵循欧盟通用数据保护条例（GDPR）</p>
+                <h6>三 用户守则</h6>
+                <p>3.1 禁止使用任何方式将修改后的Depanel以Depanel的名义发布</p>
+                <p>3.2 禁止利用Depanel发表、传送、传播、储存违反当地法律、关于恐怖主义的内容，或任何不当的、侮辱诽谤的及任何违反当地法律法规政策的内容。</p>
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <a href="go-2" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
                     id="startInstall">
                     同意
                 </a>
-                <a type="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect show-modal" style="color: #999999">
+                <a type="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect show-modal"
+                    style="color: #999999">
                     拒绝
                 </a>
             </div>
         </div>
-    </form>
-    <dialog class="mdl-dialog">
-        <div class="mdl-dialog__content">
-            <p>
-                如果您不同意我们的用户协议，将无法继续进行安装
-            </p>
+        <dialog class="mdl-dialog">
+            <div class="mdl-dialog__content">
+                <p>
+                    如果您不同意我们的用户协议，将无法继续进行安装
+                </p>
+            </div>
+            <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+                <button type="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect close">
+                    了解了
+                </button>
+                <button type="button" class="mdl-button" style="color: #999999">
+                    抱歉 我拒绝
+                </button>
+            </div>
+        </dialog>
+        <script>
+            var dialog = document.querySelector('dialog');
+            var showModalButton = document.querySelector('.show-modal');
+            if (!dialog.showModal) {
+                dialogPolyfill.registerDialog(dialog);
+            }
+            showModalButton.addEventListener('click', function () {
+                dialog.showModal();
+            });
+            dialog.querySelector('.close').addEventListener('click', function () {
+                dialog.close();
+            });
+        </script>
+        <div class="mdl-tooltip" data-mdl-for="startInstall">
+            开始安装
         </div>
-        <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
-            <button type="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect close">
-                了解了
-            </button>
-            <button type="button" class="mdl-button" style="color: #999999">
-                抱歉 我想卸载
-            </button>
-        </div>
-    </dialog>
-    <script>
-        var dialog = document.querySelector('dialog');
-        var showModalButton = document.querySelector('.show-modal');
-        if (!dialog.showModal) {
-            dialogPolyfill.registerDialog(dialog);
-        }
-        showModalButton.addEventListener('click', function () {
-            dialog.showModal();
-        });
-        dialog.querySelector('.close').addEventListener('click', function () {
-            dialog.close();
-        });
-    </script>
-    <div class="mdl-tooltip" data-mdl-for="startInstall">
-        开始安装
     </div>
 </body>
 

@@ -47,10 +47,6 @@ else:
     def step1():
         return render_template('install/step1.html')
 
-    @app.route('/install/a/')
-    def a():
-        return render_template('install/a.html')
-
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0')
