@@ -1,8 +1,7 @@
 def failed(username,password):
-    import os
+    import os,generate
+    from crypt import crypt
     if os.path.isfile('./admin/'+username+'.key'):
-        import generate
-        from crypt import crypt
         with open('./admin/'+username+'.key','r',encoding="utf-8") as file:
             key=file.read()
         if generate.gcrypt(crypt(username+'&'+password))==key:

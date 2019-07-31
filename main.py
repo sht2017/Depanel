@@ -10,13 +10,14 @@ app.config['SECRET_KEY'] = generateRandom()
 @app.route('/')
 def index():
     if not installed():
-        return redirect('/')
+        return redirect('/install/')
     if 'username' in session:
         return 'Logged in as '+(session['username'])
     return redirect('/login/')
 
 @app.route('/login/', methods=['GET', 'POST'])
 def login_(error='', title='Depanel Login'):
+    ip = request.remote_addr
     if not installed():
         return redirect('/')
     elif 'username' in session:
@@ -27,11 +28,13 @@ def login_(error='', title='Depanel Login'):
         reject=login.reject(username, password)
         if reject:
             error=reject
+            print('用户 '+username+' 登入被拒绝 原因是 '+error+' ip地址是 '+ip)
         else:
             if login.failed(username, password):
                 error = 'Invalid username/password'
+                print('用户 '+username+' 登入被拒绝 原因是 '+error+' ip地址是 '+ip)
             else:
-                print('valid')
+                print('用户 '+username+' 登入成功'+' ip地址是 '+ip)
                 session['username']=username
                 return redirect('/')
     return render_template('login1.html', error=error, title=title)
