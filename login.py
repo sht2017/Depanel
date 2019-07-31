@@ -10,14 +10,6 @@ def failed(username,password):
             return bool(True)
     else:
         return bool(True)
-'''    import generate
-    from crypt import crypt
-    with open('./help/'+str('.key'),'r',encoding="utf-8") as file:
-        key=file.read()
-    if generate.gcrypt(crypt(username+'&'+password))=='1':
-        return bool(True)
-    else:
-        return bool(False)'''
 
 def reject(username,password):
     if username == '' and password == '':

@@ -12,7 +12,7 @@ def index():
     if not installed():
         return redirect('/install/')
     if 'username' in session:
-        return 'Logged in as '+(session['username'])
+        return render_template('index.html',user=(session['username']))
     return redirect('/login/')
 
 @app.route('/login/', methods=['GET', 'POST'])
