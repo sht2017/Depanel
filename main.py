@@ -37,7 +37,12 @@ def login_(error='', title='Depanel Login'):
                 print('用户 '+username+' 登入成功'+' ip地址是 '+ip)
                 session['username']=username
                 return redirect('/')
-    return render_template('login1.html', error=error, title=title)
+    return render_template('login.html', error=error, title=title)
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect('/')
 
 @app.route('/help/<parameter>/')
 def help(parameter):
