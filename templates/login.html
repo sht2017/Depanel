@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/static/mdl/material.blue-pink.min.css">
+<script src="/static/mdl/material.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+</head>
+
+<body
+    style="height: 100%; background: url('https://source.unsplash.com/1920x1080/?wallpaper') center no-repeat; background-size: cover; background-attachment: fixed;">
+    <div
+        style="width: 100vw; height: 100vh; display : flex; overflow-x: hidden; overflow-y: auto; justify-content: center; align-items: center;">
+        <style>
+            .demo-card-wide.mdl-card {
+                width: 512px;
+            }
+
+            .demo-card-wide>.mdl-card__title {
+                color: #fff;
+                height: 176px;
+                background: url('https://source.unsplash.com/1920x1080/?wallpaper') center / cover;
+            }
+
+            .demo-card-wide>.mdl-card__menu {
+                color: #fff;
+            }
+        </style>
+
+        <div class="demo-card-wide mdl-card mdl-shadow--6dp"
+            style="width: min-content; height: min-content; position: absolute; margin: auto;">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">{{title}}</h2>
+            </div>
+            <form method="POST">
+                <div class="mdl-card__supporting-text">
+                    <div style="padding-left: 5pt; padding-right: 5pt">
+                        <br>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                            style="text-align: center;">
+                            <input class="mdl-textfield__input" type="text" id="sample3" name="username">
+                            <label class="mdl-textfield__label" for="sample3">Username</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="password" id="sample3" name="password">
+                            <label class="mdl-textfield__label" for="sample3">Password</label>
+                        </div>
+                        <br>
+                        <div style="width: 100%; text-align: left; padding-left: 5pt; padding-right: 5pt">
+                            <p style="font-size: small;color: crimson">{{error}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <button id="login" type="submit"
+                        class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        LOGIN
+                    </button>
+                    <a id="retrievePassword" type="button" href="/help/retrievePassword/"
+                        class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                        style="color: #999999">
+                        找回密码
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="mdl-tooltip" data-mdl-for="login">
+            登入管理面板
+        </div>
+        <div class="mdl-tooltip" data-mdl-for="retrievePassword">
+            前往 帮助&gt;如何寻回我的密码
+        </div>
+    </div>
+</body>
+
+</html>
